@@ -22,13 +22,16 @@ DB_PASSWORD=userpassword
 4. Запустите контейнер с MySQL:
 ```bash
 docker-compose up -d
+```
 
 5.Установите зависимости Python:
+```
 pip install -r requirements.txt
-
+```
 6.Запустите приложение:
+```
 uvicorn app.main:app --reload
-
+```
 7.Откройте в браузере: http://localhost:8000/docs
 Авторизация
 Для доступа к API используйте:
@@ -84,12 +87,12 @@ GET /api/containers/by-cost?max_cost=150
 
 3. Добавление контейнера (POST /api/containers)
 Успешное добавление:
-
+```
 {
   "container_number": "NEWU1999999",
   "cost": 888.88
 }
-
+```
 Ошибки:
 
 Дубликат номера: "Container with this number already exists"
