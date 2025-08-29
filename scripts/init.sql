@@ -17,13 +17,11 @@ CREATE TABLE IF NOT EXISTS containers (
     INDEX idx_cost (cost)
 );
 
--- Вставка пользователей (пароли: password1, password2, password3)
 INSERT IGNORE INTO users (username, password_hash) VALUES
 ('user1', '$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW'),
 ('user2', '$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW'),
 ('user3', '$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW');
 
--- Вставка тестовых контейнеров
 INSERT IGNORE INTO containers (container_number, cost) VALUES
 ('ABCU1234567', 100.50),
 ('XYZU7654321', 200.75),
