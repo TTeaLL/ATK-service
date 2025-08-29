@@ -17,11 +17,9 @@ def create_tables():
 
         cursor = connection.cursor()
 
-        # Create database
         cursor.execute("CREATE DATABASE IF NOT EXISTS atk")
         cursor.execute("USE atk")
 
-        # Create tables
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -42,7 +40,6 @@ def create_tables():
             )
         """)
 
-        # Hash passwords and insert users
         hashed_password = bcrypt.hashpw('password1'.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
         users = [
@@ -56,7 +53,6 @@ def create_tables():
             users
         )
 
-        # Insert sample containers
         containers = [
             ('ABCU1234567', 100.50),
             ('XYZU7654321', 200.75),
